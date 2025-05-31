@@ -88,6 +88,10 @@ export default {
     },
 
     obtenerPathVariable() {
+      //ciclo de vida de componentes , los componenetes tiene un cilo de vida son las  etapas desde que un componenete se crea y se destruye
+      //es fundamental para gestionar funciones como la carga de datos, limpesza de de datos y eventos, y cada
+      // una de las etapas del ciclo de vida del componente se lo declara como una
+      //opcion mas del option api .
       const cedula = this.$route.params.cedula;
       console.log(cedula);
 
@@ -96,6 +100,45 @@ export default {
       const mes = this.$route.query.mes;
       console.log(mes);
     },
+  },
+  //estudiar esta seccion
+  beforeCreate() {
+    console.log("beforeCreate");
+  },
+
+  created() {
+    console.log("cuando se crea el componente");
+  },
+
+  beforeMount() {
+    console.log("beforeMount");
+  },
+
+  mounted() {
+    const cedula = this.$route.params.cedula;
+    console.log(cedula);
+
+    const anion = this.$route.query.anion;
+    console.log(anion);
+    const mes = this.$route.query.mes;
+    console.log(mes);
+    console.log("mounted");
+  },
+
+  beforeUpdate() {
+    console.log("beforeUpdate");
+  },
+
+  update() {
+    console.log("update");
+  },
+
+  beforeUnmount() {
+    console.log("beforeUnmount");
+  },
+
+  unmounted() {
+    console.log("unmounted");
   },
 };
 </script>
