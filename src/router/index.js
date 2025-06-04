@@ -60,6 +60,18 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/PokemonView.vue"),
   },
 
+   {
+    path: "/pokemon2",
+    name: "pokemon2",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    // la carga perezoza involucra que no carga de inicio las paginas si no cuando la necesite
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Pokemon2View.vue"),
+  },
+
+
   {
     path: "/formulario",
     name: "formulario5",
