@@ -1,14 +1,15 @@
 <template>
+  {{ mensaje1 }}
   <div class="image-container">
     <img
-      v-if="!mostrar"
+      v-if="!mostrarImagen"
       class="ocultar"
       :src="ImagenFuente"
       alt="No se puede renderizar el pokemon"
     />
 
     <img
-      v-if="mostrar"
+      v-if="mostrarImagen"
       :src="ImagenFuente"
       alt="Ne se puede renderizar el pokemon"
     />
@@ -21,18 +22,18 @@ export default {
   props: {
     pokemonId: {
       type: Number,
-      requerid: true,
+      required: true,
     },
 
     mostrarImagen: {
       type: Boolean,
-      requird: true,
+      required: true,
       default: false,
     },
   },
   data() {
     return {
-      mostrar: this.mostrarImagen,
+      mensaje1: "mensaje1",
     };
   },
 
@@ -48,7 +49,7 @@ export default {
 img {
   height: 200px;
   position: absolute;
-  right: 45%;
+  right: 37%;
 }
 
 .ocultar {

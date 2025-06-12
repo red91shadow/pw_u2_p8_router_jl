@@ -1,7 +1,12 @@
 <template>
+  {{ mensaje2 }}
   <div class="options-container">
     <ul>
-      <li v-for="pokemon in pokemons" :key="pokemon.id">
+      <li
+        @click="comunicarClick(pokemon.id)"
+        v-for="pokemon in pokemons"
+        :key="pokemon.id"
+      >
         {{ pokemon.nombre }}
       </li>
     </ul>
@@ -10,10 +15,32 @@
 
 <script>
 export default {
+  data() {
+    return {
+      mensaje2: "mensaje2",
+    };
+  },
   props: {
     pokemons: {
       type: Array,
       required: true,
+    },
+  },
+
+  methods: {
+    comunicarClick(id) {
+      console.log("Se realizo un click.....");
+      console.log(id);
+
+      const objetoEnviado = {
+        atributo1: id,
+        atributo2: "Joel",
+        atributo3: true,
+      };
+
+      //luego del emit se va el control al padre asi que deberia ser la ultima linea del metodo
+      this.$emit("seleccionado", objetoEnviado); //en su primer argumento yo le doy un nombre, este caso seleccionado, este evento se emite al padre
+      //como segundo argumento del emit envio el dato que deseo enviar
     },
   },
 };

@@ -40,11 +40,9 @@ const obtenerArrgloPokemon = async (arregloNumerico) => {
 };
 
 const obtenerOpciones = async (longitud) => {
-
   const vector = obternArregloNumerico(longitud);
   const vectorObjetos = await obtenerArrgloPokemon(vector);
   return vectorObjetos;
-
 };
 
 //Funciones fachada
@@ -54,8 +52,10 @@ const obtenerOpciones = async (longitud) => {
   return await consumirPokemon(id);
 };*/
 
-
 export const obtenerOpcionesFachada = async (longitud) => {
   return await obtenerOpciones(longitud);
 };
 
+export function obtenerAleatorioFachada(min, max) {
+  return obtenerAleatorio(min, max);
+}
