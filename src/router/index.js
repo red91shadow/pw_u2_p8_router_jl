@@ -93,6 +93,17 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/PreguntaView.vue"),
   },
+
+  {
+    path: "/responsivoView",
+    name: "componenteResponsivo",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    // la carga perezoza involucra que no carga de inicio las paginas si no cuando la necesite
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/ResponsivoView.vue"),
+  },
 ];
 
 const router = createRouter({
