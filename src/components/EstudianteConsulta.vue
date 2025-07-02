@@ -14,7 +14,7 @@
         <input type="text" id="lastNameId" v-model="estudiante.apellido" />
 
         <label for="dateId">Fecha de nacimiento</label>
-        <input type="text" id="dateId" :value="formatearFecha(estudiante.fechaNacimiento)" readonly />
+        <input type="text" id="dateId" v-model="estudiante.fechaNacimiento" />
       </form>
     </div>
   </div>
