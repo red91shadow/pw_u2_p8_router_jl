@@ -104,6 +104,28 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/ResponsivoView.vue"),
   },
+
+  {
+    path: "/estudianteConsulta",
+    name: "estudianteConsulta",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    // la carga perezoza involucra que no carga de inicio las paginas si no cuando la necesite
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/EstudianteConsultaView.vue"),
+  },
+
+  {
+    path: "/estudiantesConsulta",
+    name: "estudiantesConsulta",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    // la carga perezoza involucra que no carga de inicio las paginas si no cuando la necesite
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/EstudiantesConsultarView.vue"),
+  },
 ];
 
 const router = createRouter({
